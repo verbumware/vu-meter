@@ -1,3 +1,5 @@
 # vu-meter
 
-A volume unit (VU) meter displaying the audio signal level
+A volume unit (VU) meter device, displaying the audio signal level.
+
+Implemented in SVG nad JavaScript
