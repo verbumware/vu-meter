@@ -2,4 +2,4 @@
 
 A volume unit (VU) meter device, displaying the audio signal level.
 
-Implemented in SVG nad JavaScript
+Implemented in SVG and JavaScript.

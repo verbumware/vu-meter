@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="128"
+   viewBox="0 0 256 128"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="basic.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="128"
+     inkscape:cy="64"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="3840"
+     inkscape:window-height="2059"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:object-nodes="true"
+     inkscape:snap-text-baseline="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3336"
+       empspacing="16" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-924.36216)">
+    <g
+       id="vu-back">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4182"
+         y="1004.3622"
+         x="128"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:20px;text-align:center;text-anchor:middle"
+           y="1004.3622"
+           x="128"
+           id="tspan4184"
+           sodipodi:role="line">VU</tspan></text>
+      <path
+         style="fill:none;stroke:#c0c0c0;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path4180-6"
+         sodipodi:type="arc"
+         sodipodi:cx="128"
+         sodipodi:cy="1147.4874"
+         sodipodi:rx="200"
+         sodipodi:ry="200"
+         sodipodi:start="4.1424764"
+         sodipodi:end="5.2733936"
+         d="m 20.08831,979.0978 a 200,200 0 0 1 214.31911,-0.95458"
+         sodipodi:open="true" />
+      <path
+         style="fill:none;stroke:#ff5500;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path4180-6-8"
+         sodipodi:type="arc"
+         sodipodi:cx="128"
+         sodipodi:cy="1147.4874"
+         sodipodi:rx="200"
+         sodipodi:ry="200"
+         sodipodi:start="4.9676079"
+         sodipodi:end="5.2733936"
+         d="m 178.49145,953.96582 a 200,200 0 0 1 55.91597,24.1774"
+         sodipodi:open="true" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4182-0"
+         y="967.36218"
+         x="15"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:13.75px;text-align:center;text-anchor:middle"
+           y="967.36218"
+           x="15"
+           id="tspan4184-3"
+           sodipodi:role="line">20</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4182-0-2-4"
+         y="944.36218"
+         x="184"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:13.75px;text-align:center;text-anchor:middle"
+           y="944.36218"
+           x="184"
+           id="tspan4184-3-4-8"
+           sodipodi:role="line">0</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4182-0-2"
+         y="968.36218"
+         x="240"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:13.75px;text-align:center;text-anchor:middle"
+           y="968.36218"
+           x="240"
+           id="tspan4184-3-4"
+           sodipodi:role="line">+3</tspan></text>
+    </g>
+    <g
+       id="vu-front">
+      <rect
+         y="1020.3622"
+         x="1"
+         height="30.999977"
+         width="254"
+         id="rect4207"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 6;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <rect
+       style="fill:none;fill-rule:evenodd;stroke:#c0c0c0;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 4;stroke-dashoffset:0;stroke-opacity:1"
+       id="vu-view"
+       width="254"
+       height="125.99998"
+       x="1"
+       y="925.36218" />
+    <path
+       style="fill:none;stroke:#c0c0c0;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 4;stroke-dashoffset:0;stroke-opacity:1"
+       id="vu-track"
+       sodipodi:type="arc"
+       sodipodi:cx="128"
+       sodipodi:cy="1148.36"
+       sodipodi:rx="208"
+       sodipodi:ry="208"
+       sodipodi:start="4.1424764"
+       sodipodi:end="5.2733936"
+       d="M 15.771843,973.23477 A 208,208 0 0 1 238.66372,972.24201"
+       sodipodi:open="true" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 128,940.36216 0,39"
+       id="vu-needle"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

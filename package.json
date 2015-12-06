@@ -1,0 +1,32 @@
+{
+  "name": "vu-meter",
+  "version": "1.0.0",
+  "description": "Volume Unit (VU) signal level meter",
+  "main": "lib/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "jsof": "^0.2.1",
+    "mocha": "^2.3.4",
+    "onml": "^0.2.0"
+  },
+  "scripts": {
+    "test": "eslint lib/*.js && mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verbumware/vu-meter.git"
+  },
+  "keywords": [
+    "VU",
+    "meter",
+    "signal",
+    "level"
+  ],
+  "author": "Aliaksei Chapyzhenka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/verbumware/vu-meter/issues"
+  },
+  "homepage": "https://github.com/verbumware/vu-meter#readme"
+}
