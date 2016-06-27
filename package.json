@@ -5,10 +5,13 @@
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
+    "browserify": "^13.0.0",
+    "browserify-string": "^1.1.1",
     "eslint": "^1.10.3",
     "jsof": "^0.2.1",
     "mocha": "^2.3.4",
-    "onml": "^0.2.0"
+    "onml": "^0.3.1",
+    "yargs": "^3.32.0"
   },
   "scripts": {
     "test": "eslint lib/*.js && mocha test"

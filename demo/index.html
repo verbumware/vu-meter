@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>uv-meter</title>
+  <style type="text/css">
+  html, body {
+    background: #ede7d5;
+    height: 100%;
+    margin: 0;
+  }
+  .content {
+    height: 100%;
+    margin: 0;
+  }
+  .logo {
+    display: block;
+    margin: auto;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+</style>
+</head>
+<body>
+<div class="content" id="content">
+</dev>
+<script src="basic.js"></script>
+<script>
+(function (element) {
+    var inst = window['instruments'][0](element);
+    inst.update(0.5);
+})(document.getElementById('content'));
+</script>
+</body>
+</html>
