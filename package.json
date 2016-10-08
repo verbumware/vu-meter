@@ -5,16 +5,18 @@
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^13.0.0",
+    "browserify": "^13.1.0",
     "browserify-string": "^1.1.1",
-    "eslint": "^1.10.3",
+    "eslint": "^3.7.1",
     "jsof": "^0.2.1",
-    "mocha": "^2.3.4",
+    "mocha": "^3.1.0",
     "onml": "^0.3.1",
-    "yargs": "^3.32.0"
+    "svgo": "^0.7.1",
+    "yargs": "^6.0.0"
   },
   "scripts": {
-    "test": "eslint lib/*.js && mocha test"
+    "test": "eslint lib/*.js && mocha test",
+    "opt": "svgo -i skin/basic.svg -o skin/basic.opt.svg -p 0 --pretty --disable=cleanupIDs"
   },
   "repository": {
     "type": "git",
