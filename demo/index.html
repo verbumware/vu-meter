@@ -23,17 +23,45 @@
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-</style>
+  </style>
 </head>
 <body>
-<div class="content" id="content">
-</dev>
-<script src="basic.js"></script>
-<script>
-(function (element) {
-    var inst = window['instruments'][0](element);
-    inst.update(0.5);
-})(document.getElementById('content'));
-</script>
+  <div id="content">
+    <svg xmlns="http://www.w3.org/2000/svg" width="256" height="128" viewBox="0 0 256 128" version="1">
+      <g id="vu-needle" transform="translate(128, 64)">
+        <path d="M0.5 0.5v39" id="vu-needle" fill="none" fill-rule="evenodd" stroke="#000"/>
+      </g>
+    </svg>
+    <div id="controls"></div>
+  </div>
+  <script src="app.js"></script>
+  <script>(function () {
+      'use strict';
+      var content = document.getElementById('content');
+      var buttons = 'Start Stop'
+          .split(' ')
+          .reduce(function (o, key) {
+              var el = document.createElement('button');
+              el.innerHTML = key;
+              content.appendChild(el);
+              o[key] = el;
+              return o;
+          }, {});
+
+      var vuNeedle = document.getElementById('vu-needle');
+      console.log(vuNeedle);
+      verbumware.mic({
+          meter: {
+              render: function (val) {
+                  vuNeedle.setAttribute('transform', 'translate(' + Math.round(val * 700) +',64)');
+              }
+          },
+          controls: {
+              start: { el: buttons.Start, on: 'click' },
+              stop:  { el: buttons.Stop,  on: 'click' },
+          }
+      });
+  })();
+  </script>
 </body>
 </html>

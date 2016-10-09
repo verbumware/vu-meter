@@ -6,12 +6,13 @@
   "dependencies": {},
   "devDependencies": {
     "browserify": "^13.1.0",
-    "browserify-string": "^1.1.1",
     "eslint": "^3.7.1",
+    "flow-bin": "^0.33.0",
     "jsof": "^0.2.1",
     "mocha": "^3.1.0",
     "onml": "^0.3.1",
     "svgo": "^0.7.1",
+    "watch": "^1.0.1",
     "yargs": "^6.0.0"
   },
   "scripts": {
