@@ -11,6 +11,6 @@ Implemented in SVG and JavaScript.
  * main logarithmic response with scale -20..+3 db
  * secondary % scale
  * visually sets a +3db red zone
- * configurable rise / fall time
+ * configurable rise / fall time. deafult to 300ms.
  * voice oriented frequency response
  * configurable 0VU point. -18dBFS by default.
