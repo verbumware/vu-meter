@@ -13,3 +13,4 @@ Implemented in SVG and JavaScript.
  * visually sets a +3db red zone
  * configurable rise / fall time
  * voice oriented frequency response
+ * configurable 0VU point. -18dBFS by default.
