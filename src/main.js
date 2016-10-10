@@ -6,17 +6,19 @@ var getUserMedia = require('./get-user-media'),
     audioCxt = require('./audio-cxt'),
     level = require('./level');
 
-var newButton = function (el) {
+var newButton = function (button, backlit) {
     var state = false;
     return function (start, stop) {
-        el.addEventListener('click', function () {
+        button.addEventListener('click', function () {
             if (state)  {
                 stop();
+                backlit.setAttribute('fill', 'url(#offGradient)');
                 state = false;
                 console.log('stop');
             }
             else {
                 start();
+                backlit.setAttribute('fill', 'url(#onGradient)');
                 state = true;
                 console.log('start');
             }
@@ -27,7 +29,7 @@ var newButton = function (el) {
 var newNeedle = function (el) {
     return {
         render: function (val) {
-            el.setAttribute('transform', 'rotate(' + (val * 10) + ')');
+            el.setAttribute('transform', 'rotate(' + (val * 250 - 30) + ')');
         }
     };
 };
@@ -37,7 +39,11 @@ var div = document.createElement('div');
 div.innerHTML = onml.stringify(genSVG);
 content.appendChild(div);
 
-var vuButton = newButton(document.getElementById('vu-button'));
+var vuButton = newButton(
+    document.getElementById('vu-button'),
+    document.getElementById('vu-backlit')
+);
+
 var vuNeedle = newNeedle(document.getElementById('vu-needle'));
 
 function step1 (stream) {
