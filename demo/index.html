@@ -5,7 +5,7 @@
   <title>uv-meter</title>
   <style type="text/css">
   html, body {
-    background: #ede7d5;
+    background: #333;
     height: 100%;
     margin: 0;
   }
@@ -14,54 +14,17 @@
     margin: 0;
   }
   .logo {
-    display: block;
-    margin: auto;
+    width: 512px;
+    height: 512px;
+    margin: -256px 0 0 -256px;
     top: 50%;
+    left: 50%;
     position: relative;
-    transform: translateY(-50%);
-    stroke-width: 2px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
   }
   </style>
 </head>
 <body>
-  <div id="content">
-    <svg xmlns="http://www.w3.org/2000/svg" width="256" height="128" viewBox="0 0 256 128" version="1">
-      <g id="vu-needle" transform="translate(128, 64)">
-        <path d="M0.5 0.5v39" id="vu-needle" fill="none" fill-rule="evenodd" stroke="#000"/>
-      </g>
-    </svg>
-    <div id="controls"></div>
-  </div>
+  <div id="content" class="logo"></div>
   <script src="app.js"></script>
-  <script>(function () {
-      'use strict';
-      var content = document.getElementById('content');
-      var buttons = 'Start Stop'
-          .split(' ')
-          .reduce(function (o, key) {
-              var el = document.createElement('button');
-              el.innerHTML = key;
-              content.appendChild(el);
-              o[key] = el;
-              return o;
-          }, {});
-
-      var vuNeedle = document.getElementById('vu-needle');
-      console.log(vuNeedle);
-      verbumware.mic({
-          meter: {
-              render: function (val) {
-                  vuNeedle.setAttribute('transform', 'translate(' + Math.round(val * 700) +',64)');
-              }
-          },
-          controls: {
-              start: { el: buttons.Start, on: 'click' },
-              stop:  { el: buttons.Stop,  on: 'click' },
-          }
-      });
-  })();
-  </script>
 </body>
 </html>
