@@ -29,7 +29,7 @@ var newButton = function (button, backlit) {
 var newNeedle = function (el) {
     return {
         render: function (val) {
-            el.setAttribute('transform', 'rotate(' + (val * 250 - 30) + ')');
+            el.setAttribute('transform', 'rotate(' + (val * 60 - 30) + ')');
         }
     };
 };
