@@ -1,6 +1,6 @@
 {
   "name": "vu-meter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Volume Unit (VU) signal level meter",
   "main": "lib/index.js",
   "dependencies": {},
