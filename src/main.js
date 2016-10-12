@@ -26,10 +26,11 @@ var newButton = function (button, backlit) {
     };
 };
 
-var newNeedle = function (el) {
+var newNeedle = function (vuEl, maxEl) {
     return {
-        render: function (val) {
-            el.setAttribute('transform', 'rotate(' + (val * 60 - 30) + ')');
+        render: function (vu, max) {
+            vuEl.setAttribute('transform', 'rotate(' + (vu * 60 - 30) + ')');
+            maxEl.setAttribute('transform', 'rotate(' + (max * 60 - 30) + ')');
         }
     };
 };
@@ -39,12 +40,8 @@ var div = document.createElement('div');
 div.innerHTML = onml.stringify(genSVG);
 content.appendChild(div);
 
-var vuButton = newButton(
-    document.getElementById('vu-button'),
-    document.getElementById('vu-backlit')
-);
-
-var vuNeedle = newNeedle(document.getElementById('vu-needle'));
+var vuButton = newButton(document.getElementById('vu-button'), document.getElementById('vu-backlit'));
+var vuNeedle = newNeedle(document.getElementById('vu-needle'), document.getElementById('max-needle'));
 
 function step1 (stream) {
     console.log(stream);

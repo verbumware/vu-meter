@@ -14,24 +14,46 @@ function newPID (kp, ki, kd) { // PID regulator
     };
 }
 
+function newPPM (k) {
+    var prev = 0;
+    return function (cur) {
+        if (cur > (k * prev)) {
+            prev = cur;
+            return cur;
+        }
+        prev = k * prev;
+        return prev;
+    };
+}
+
 function rectifier (arr, len) { // RMS
     var i, res = 0;
     for (i = 0; i < len; i++) {
         res += Math.abs(arr[i]);
     }
-    return Math.sqrt(res / len);
+    return res / len;
+}
+
+function max (arr, len) { // max
+    var i, res = 0;
+    for (i = 0; i < len; i++) {
+        res = Math.max(Math.abs(arr[i]), res);
+    }
+    return res;
 }
 
 function level (meter) {
     var ku = 0.3;
-    var pid = newPID(0.4 * ku, 2 * ku, ku / 8);
+    var vuPID = newPID(0.4 * ku, 2 * ku, ku / 8);
+    var maxPID = newPPM(0.96);
     return function (event) {
         var inp = event.inputBuffer;
         var inpData = inp.getChannelData(0);
         var x1 = rectifier(inpData, inp.length);
-        var x2 = pid(x1);
-        console.log(x1, x2);
-        meter.render(x2);
+        var vuVal = vuPID(x1);
+        var maxVal = maxPID(max(inpData, inp.length));
+        console.log(vuVal, maxVal);
+        meter.render(vuVal, maxVal / 2);
     };
 }
 
