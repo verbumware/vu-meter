@@ -17,7 +17,8 @@
   },
   "scripts": {
     "test": "eslint lib/*.js && mocha test",
-    "opt": "svgo -i skin/basic.svg -o skin/basic.opt.svg -p 0 --pretty --disable=cleanupIDs"
+    "opt": "svgo -i skin/basic.svg -o skin/basic.opt.svg -p 0 --pretty --disable=cleanupIDs",
+    "build": "browserify src/main.js > demo/app.js"
   },
   "repository": {
     "type": "git",
