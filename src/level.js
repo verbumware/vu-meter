@@ -42,6 +42,14 @@ function max (arr, len) { // max
     return res;
 }
 
+function scaleSat (val) {
+    val = val - 0.1; // -20dB
+    val = val / 1.3; // +3db
+    if (val < 0) { return 0; }
+    if (val > 1) { return 1; }
+    return val;
+}
+
 function level (meter) {
     var ku = 0.3;
     var vuPID = newPID(0.4 * ku, 2 * ku, ku / 8);
@@ -49,11 +57,15 @@ function level (meter) {
     return function (event) {
         var inp = event.inputBuffer;
         var inpData = inp.getChannelData(0);
-        var x1 = rectifier(inpData, inp.length);
-        var vuVal = vuPID(x1);
-        var maxVal = maxPID(max(inpData, inp.length));
+
+        var vuVal = vuPID(rectifier(inpData, inp.length)) * 2;
+        var maxVal = maxPID(max(inpData, inp.length)) / 2;
+
+        vuVal = scaleSat(vuVal);
+        maxVal = scaleSat(maxVal);
+
         console.log(vuVal, maxVal);
-        meter.render(vuVal, maxVal / 2);
+        meter.render(vuVal, maxVal);
     };
 }
 
