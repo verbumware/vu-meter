@@ -1,8 +1,7 @@
 'use strict';
 
 module.exports = function (stream, options, cb) {
-    var AudioContext = window.AudioContext || window.webkitAudioContext;
-    var acxt = new AudioContext();
+    var acxt = new (window.AudioContext || window.webkitAudioContext)();
 
     var n0 = acxt.createMediaStreamSource(stream);
     var n1 = acxt.createGain();
