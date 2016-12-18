@@ -2,26 +2,81 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>uv-meter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <title>Verbumware Inc.</title>
   <style type="text/css">
-  html, body {
-    background: #333;
-    height: 100%;
-    margin: 0;
+  html, body, .container {
+      height: 100%;
+      margin:0;
+      padding:0;
+      overflow: hidden;
   }
   .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+      background-color: #eee;
+      position:relative;
   }
-  .bttn {
-    margin: 20px;
+  .control {
+      background-color: #123;
+      position: absolute;
+      height: 30vh;
+      width: 100%;
+  }
+  .report {
+      position: absolute;
+      bottom: 5vw;
+      left: 5vw;
+      height: calc(70vh - 10vw);
+      width: 90vw;
+      overflow: auto;
+  }
+  .treport {
+      position: relative;
+      font-size: 5vw;
+      font-family: 'Open Sans', sans-serif;
+  }
+  .logo svg {
+      position: absolute;
+      height: 20vh;
+      top: 15vh;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  }
+  @media screen and (orientation:landscape) {
+      .control {
+          left: 0;
+          width: 30vw;
+          height: 100%
+      }
+      .report {
+          left: calc(30vw + 5vh);
+          bottom: 5vh;
+          width: calc(70vw - 10vh);
+          height: 90vh;
+      }
+      .treport {
+          font-size: 5vh;
+      }
+      .logo svg {
+          height: 20vw;
+          top: 50%
+      }
   }
   </style>
 </head>
 <body>
-  <div id="content" class="container">
-    <button id="thebutton" class="bttn">Click to START</button>
+
+  <div class="container">
+    <span class="control">
+      <span id="content" class="logo">
+        <svg id="button" xmlns="http://www.w3.org/2000/svg" width="181" height="209" viewBox="0 0 181 209"><path d="M0 157l90.067 52 90.066-52V53L90.067 1 0 53z" fill="#fc0" fill-rule="evenodd"/><path d="M13.3 85.822L38.89 137l25.588-51.178L90.068 137l25.587-51.178L141.245 137l25.588-51.178" fill="none" stroke="#000" stroke-width="7.997" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </span>
+
+    <span class="report">
+      <span id="report" class="treport">Push the button to talk...</span>
+    </span>
   </div>
   <script src="app.js"></script>
 </body>

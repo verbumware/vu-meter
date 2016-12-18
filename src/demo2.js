@@ -1,23 +1,48 @@
 'use strict';
 
 var getUserMedia = require('./get-user-media'),
-    audioCxt = require('./audio-cxt');
+    genSVG = require('../lib/gen-svg'),
+    onml = require('onml'),
+    audioCxt = require('./audio-cxt'),
+    level = require('./level');
 
-function button (h) {
-    var state = 0;
-    var el = document.getElementById('thebutton');
-    el.addEventListener('click', function () {
-        if (state) {
-            el.innerHTML = 'Click to START';
-            state = 0;
-            h.stop();
-        } else {
-            el.innerHTML = 'Click to STOP';
-            state = 1;
-            h.start();
+var newButton = function (button, backlit) {
+    var state = false;
+    return function (start, stop) {
+        button.addEventListener('click', function () {
+            if (state)  {
+                stop();
+                backlit.setAttribute('fill', 'url(#offGradient)');
+                state = false;
+                console.log('stop');
+            }
+            else {
+                start();
+                backlit.setAttribute('fill', 'url(#onGradient)');
+                state = true;
+                console.log('start');
+            }
+        });
+    };
+};
+
+var newNeedle = function (vuEl, maxEl) {
+    return {
+        render: function (vu, max) {
+            vuEl.setAttribute('transform', 'rotate(' + (vu * 60 - 30) + ')');
+            maxEl.setAttribute('transform', 'rotate(' + (max * 60 - 30) + ')');
         }
-    });
-}
+    };
+};
+
+var content = document.getElementById('content');
+var div = document.createElement('div');
+var report = document.getElementById('report');
+div.innerHTML = onml.stringify(genSVG);
+content.appendChild(div);
+
+var vuButton = newButton(document.getElementById('vu-button'), document.getElementById('vu-backlit'));
+var vuNeedle = newNeedle(document.getElementById('vu-needle'), document.getElementById('max-needle'));
 
 var targetSampleRate = 16000;
 
@@ -47,22 +72,40 @@ function resampleAudioBuffer(audioBuffer, oncomplete) {
 }
 
 function processor () {
-    var ws = new WebSocket('ws://127.1.1.1:8080');
+    var ws = new WebSocket('ws://verbumware.org:8008', 'simple-audio-stream');
     ws.binaryType = 'arraybuffer';
-    return function (event) {
-        var inp = event.inputBuffer;
-        resampleAudioBuffer(inp, function (data) {
-            console.log(data);
-            ws.send(data);
-        });
+    var lev = level(vuNeedle);
+    ws.onopen = function (event) {
+        console.log(event);
+    };
+    ws.onerror = function (event) {
+        console.log(event);
+    };
+    ws.onclose = function (event) {
+        console.log(event);
+    };
+    ws.onmessage = function (event) {
+        console.log(event.data);
+        report.innerHTML = event.data;
+    };
+    return {
+        ws: ws,
+        processor: function (event) {
+            lev(event);
+            var inp = event.inputBuffer;
+            resampleAudioBuffer(inp, function (data) {
+                // console.log(data);
+                ws.send(data);
+            });
+        }
     };
 }
 
 function step1 (stream) {
-    console.log(stream);
+    // console.log(stream);
     var p = processor();
     var h = audioCxt(stream, {}, p);
-    button(h);
+    vuButton(h.start, h.stop);
 }
 
 getUserMedia(
